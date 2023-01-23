@@ -32,11 +32,14 @@ const Form = ({add, list}) => {
                 <button>Search</button>
             </form>
             {list.length === 0 && <div className="first-view">Hey! Start searching for movies :)</div>}
-            {
-                list.map((el, id) => (
-                    <Result key={id} data={el}/>
-                ))
-            }
+            <div className="grid-list">
+                {
+                    list.map((el, id) => (
+                        <Result key={id} data={el}/>
+                    ))
+                }
+            </div>
+
         </>
 
     );

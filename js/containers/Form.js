@@ -1,16 +1,18 @@
 import {connect} from "react-redux";
 import Form from "../components/Form";
-import {addToList} from "../redux/actions/actions";
+import {addToList, addToWatchedList} from "../redux/actions/actions";
 
 const mapStateToProps = (state) => {
     return {
-        list: state.list
+        list: state.list,
+        watchedList: state.watchedList
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        add: (item) => dispatch(addToList(item))
+        add: (item) => dispatch(addToList(item)),
+        addWatched: (item) => dispatch(addToWatchedList(item))
     }
 }
 
