@@ -5,8 +5,8 @@ const Navigator = () => {
     return (
         <div className="navigator">
             <span><NavLink to="/">Search Field</NavLink></span>
-            <span><NavLink to="/result">Watched Movies</NavLink></span>
-            <span><NavLink>To Watch</NavLink></span>
+            <span><NavLink to="/watched">Watched Movies</NavLink></span>
+            <span><NavLink to="/towatch">To Watch</NavLink></span>
         </div>
 
     );

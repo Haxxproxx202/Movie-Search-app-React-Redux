@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Main from "./components/Main";
 import store from "./redux/store";
 import Navigator from "./components/Navigator";
+import ToWatch from "./containers/ToWatch";
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
                 <Navigator />
                 <Routes>
                     <Route exact path="/" element={<Main />} />
+                    <Route path="/towatch" element={<ToWatch />} />
                 </Routes>
             </BrowserRouter>
         </Provider>
