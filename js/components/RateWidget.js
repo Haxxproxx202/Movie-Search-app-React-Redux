@@ -1,11 +1,17 @@
 import React, {useState} from 'react';
 
-const RateWidget = () => {
-    const [rate, setRate] = useState("")
+const RateWidget = ({addWatched, data}) => {
+    // const [id, setID] = useState(data);
+
+    const handleChange = (e) => {
+        if (typeof addWatched === "function") {
+            addWatched(data, e.target.value);
+        } else console.log("This is not a function")
+    }
 
 
     return (
-        <fieldset className="rating">
+        <fieldset className="rating" onChange={handleChange}>
             <input type="radio" id="star5" name="rating" value="5"/>
                 <label className="full" htmlFor="star5" title="Awesome - 5 stars"></label>
             <input type="radio" id="star4half" name="rating" value="4 and a half"/>

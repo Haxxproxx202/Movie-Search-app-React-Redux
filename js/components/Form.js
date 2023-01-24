@@ -3,7 +3,7 @@ import {API_KEY, API_URL} from "../api/constants";
 import {addToList} from "../redux/actions/actions";
 import Result from "./Result";
 
-const Form = ({add, list, addToToWatch}) => {
+const Form = ({add, list, addToToWatch, addWatched}) => {
     const [item, setItem] = useState("");
 
     const handleChange = (e) => {
@@ -35,7 +35,7 @@ const Form = ({add, list, addToToWatch}) => {
             <div className="grid-list">
                 {
                     list.map((el, id) => (
-                        <Result key={id} data={el} addToToWatch={addToToWatch}/>
+                        <Result key={id} data={el} addToToWatch={addToToWatch} addWatched={addWatched}/>
                     ))
                 }
             </div>

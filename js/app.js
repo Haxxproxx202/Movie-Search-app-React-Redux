@@ -6,6 +6,7 @@ import Main from "./components/Main";
 import store from "./redux/store";
 import Navigator from "./components/Navigator";
 import ToWatch from "./containers/ToWatch";
+import Watched from "./containers/Watched";
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
                 <Routes>
                     <Route exact path="/" element={<Main />} />
                     <Route path="/towatch" element={<ToWatch />} />
+                    <Route path="/watched" element={<Watched />} />
                 </Routes>
             </BrowserRouter>
         </Provider>

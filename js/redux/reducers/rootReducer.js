@@ -1,6 +1,6 @@
 import {combineReducers} from "redux";
 import store from "../store";
-import {ADD_TO_LIST, ADD_TO_TO_WATCH_LIST} from "../actions/actions";
+import {ADD_TO_LIST, ADD_TO_TO_WATCH_LIST, ADD_WATCHED} from "../actions/actions";
 
 
 const initialState = [];
@@ -28,7 +28,19 @@ const toWatchList = (state = [], action) => {
     }
 }
 
+const watchedList = (state = [], action) => {
+    switch (action.type) {
+        case ADD_WATCHED:
+            return [
+                ...state, action.payload
+            ]
+        default:
+            return state;
+    }
+}
+
 export default combineReducers({
     list,
-    toWatchList
+    toWatchList,
+    watchedList
 })
