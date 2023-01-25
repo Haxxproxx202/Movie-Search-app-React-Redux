@@ -9,6 +9,17 @@ const Form = ({add, list, addToToWatch, addWatched, deleteItem}) => {
     const handleChange = (e) => {
         setItem(e.target.value);
     }
+    const checkSubmit = (item) => {
+        if (list.length >= 1) {
+            list.forEach(el => {
+                if (el.imdbID !== item.imdbID) {
+                    add(item);
+                    return console.log("Nie ma");
+
+                } else console.log("Jest już w bazie")
+            })
+        } else add(item)
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,9 +29,11 @@ const Form = ({add, list, addToToWatch, addWatched, deleteItem}) => {
         })
             .then(response => response.json())
             // .then(response => console.log(response))
-            .then(res => add(res))
+            .then(res => checkSubmit(res))
             .catch(error => console.log(error))
     }
+
+
 
 
 

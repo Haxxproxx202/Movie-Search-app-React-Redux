@@ -42,6 +42,7 @@ const toWatchList = (state = [], action) => {
 const watchedList = (state = [], action) => {
     switch (action.type) {
         case ADD_WATCHED:
+
             return [
                 ...state, action.payload
             ]
