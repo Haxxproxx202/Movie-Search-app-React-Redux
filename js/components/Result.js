@@ -30,13 +30,13 @@ const Result = ({data, addToToWatch, addWatched, deleteItem}) => {
 
 
     return (
-        <span className="single-item">
+        <div className="single-item">
             <img src={data.Poster} alt="Nie działa"/>
             {/*<p>Title: {data.Title}</p>*/}
             <RateWidget data={data} addWatched={addWatched}/>
-            <p><input className="checkbox" type="checkbox" onChange={handleChange}/></p>
-            <button onClick={handleDelete}>Close</button>
-        </span>
+            <p><button onClick={handleDelete}>Close</button></p>
+            <p>Wanna watch?<input className="checkbox" type="checkbox" onChange={handleChange}/></p>
+        </div>
 
     );
 };

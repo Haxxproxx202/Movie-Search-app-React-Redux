@@ -1,15 +1,44 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-/*.container {*/
-/*    margin-left: 50px;*/
-/*}*/
+
+
+fieldset, label { margin: 0; padding: 0; }
+body {
+    margin: 20px;
+    background-image: url("../images/background6.jpg");
+
+}
+h1 { font-size: 1.5em; margin: 10px; }
+
+
 
 .navigator {
-    margin: 30px;
-    background: seagreen;
+    margin: 20px;
+    background-image: url("../images/nav_bar2.jpg");
+    background-repeat: no-repeat, repeat;
     border-radius: 10px;
-    padding: 30px;
-    font-size: 30px;
+    padding: 30px 0 0 0;
+    font-size: 22px;
+    font-weight: bold;
+    border: 1px solid whitesmoke;
+}
 
+.active {
+    color: whitesmoke;
+}
+
+.navvv {
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.navvv:hover {
+    color: red;
+}
+
+.navigator span {
+    color: white;
 }
 
 .navigator span {
@@ -19,24 +48,27 @@
 }
 
 .form {
-    margin-left: 30px;
+    margin-left: 20px;
     font-size: 20px;
-    box-sizing: border-box;
-    background-color: hsl(0, 0%, 100%);
-    border: 4px solid hsl(0, 0%, 90%);
-    width: 100px;
-    height: 100px;
+    background-color: rgba(17,11,8,0.29);
+    width: 50%;
+    height: 50px;
+    border-radius: 10%;
 }
 
 .form input {
     border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 15px;
     transition: width 0.2s ease-in-out;
+    margin: 10px 5px 10px 10px;
+    font-size: 20px;
+    padding: 7px;
 }
 
 .form input:focus {
-    width: 500%;
-    background-color: aquamarine;
+    width: 70%;
+    background-color: aliceblue;
+    transition: width 0.2s ease-in-out;
 }
 
 .first-view {
@@ -51,7 +83,7 @@
     grid-template-columns: repeat(5, 200px);
     grid-gap: 120px;
     margin-left: 30px;
-    background: darkgray;
+    margin-top: 50px;
     border-radius: 10px;
 }
 .checkbox {
@@ -63,17 +95,27 @@
 }
 .single-item {
     margin: 20px;
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid white;
 }
 
 .single-item img {
+    width: 300px;
+    height: 430px;
+    border-radius: 10px;
+}
+
+.single-item button {
+    text-align: right;
+    font-size: 20px;
     border-radius: 5px;
 }
 
-
-
-fieldset, label { margin: 0; padding: 0; }
-body{ margin: 20px; }
-h1 { font-size: 1.5em; margin: 10px; }
+.single-item button:hover {
+    background-color: crimson;
+    color: white;
+}
 
 /****** Style Star Rating Widget *****/
 
