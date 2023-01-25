@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import RateWidget from "./RateWidget";
 
-const Result = ({data, addToToWatch, addWatched}) => {
+const Result = ({data, addToToWatch, addWatched, deleteItem}) => {
     // const [data, setData] = useState({
     //     id: data.imdbID,
     //     ratings: ""
@@ -22,13 +22,20 @@ const Result = ({data, addToToWatch, addWatched}) => {
     //     })
     // }
 
+    const handleDelete = (e) => {
+        if (typeof deleteItem === "function") {
+            deleteItem(data.imdbID, window.location.href);
+        } else console.log(window.location.href)
+    }
+
 
     return (
         <span className="single-item">
             <img src={data.Poster} alt="Nie działa"/>
             {/*<p>Title: {data.Title}</p>*/}
             <RateWidget data={data} addWatched={addWatched}/>
-            <input className="checkbox" type="checkbox" onChange={handleChange}/>
+            <p><input className="checkbox" type="checkbox" onChange={handleChange}/></p>
+            <button onClick={handleDelete}>Close</button>
         </span>
 
     );

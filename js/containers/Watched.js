@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
 import Watched from "../components/Watched";
+import {deleteItem} from "../redux/actions/actions";
 
 
 const mapStateToProps = (state) => {
@@ -8,11 +9,11 @@ const mapStateToProps = (state) => {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        deleteItem: (id, url) => dispatch(deleteItem(id, url))
+    }
+}
 
 
-export default connect(mapStateToProps)(Watched)
+export default connect(mapStateToProps, mapDispatchToProps)(Watched)

@@ -1,12 +1,15 @@
 import React from 'react';
 import Result from "./Result";
 
-const ToWatch = ({toWatchList}) => {
+const ToWatch = ({toWatchList, deleteItem}) => {
     return (
-        <div>
+        <div className="grid-list">
             {
                 toWatchList.map((el, i) => (
-                    <Result key={i} data={el} />
+                    <Result key={i}
+                            data={el}
+                            deleteItem={deleteItem}
+                    />
                 ))
             }
 

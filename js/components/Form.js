@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {API_KEY, API_URL} from "../api/constants";
-import {addToList} from "../redux/actions/actions";
+import {addToList, deleteItem} from "../redux/actions/actions";
 import Result from "./Result";
 
-const Form = ({add, list, addToToWatch, addWatched}) => {
+const Form = ({add, list, addToToWatch, addWatched, deleteItem}) => {
     const [item, setItem] = useState("");
 
     const handleChange = (e) => {
@@ -35,7 +35,13 @@ const Form = ({add, list, addToToWatch, addWatched}) => {
             <div className="grid-list">
                 {
                     list.map((el, id) => (
-                        <Result key={id} data={el} addToToWatch={addToToWatch} addWatched={addWatched}/>
+                        <Result
+                            key={id}
+                            data={el}
+                            addToToWatch={addToToWatch}
+                            addWatched={addWatched}
+                            deleteItem={deleteItem}
+                        />
                     ))
                 }
             </div>

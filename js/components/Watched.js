@@ -1,12 +1,16 @@
 import React from 'react';
 import Result from "./Result";
 
-const Watched = ({list}) => {
+const Watched = ({list, deleteItem}) => {
     return (
-        <div>
+        <div className="grid-list">
             {
                 list.map((el, i) => (
-                    <Result key={i} data={el}/>
+                    <Result
+                        key={i}
+                        data={el}
+                        deleteItem={deleteItem}
+                    />
                 ))
             }
         </div>
