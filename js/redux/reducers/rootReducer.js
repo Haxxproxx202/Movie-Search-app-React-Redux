@@ -6,7 +6,8 @@ import {
     ADD_WATCHED,
     DELETE_ITEM,
     DELETE_ITEM_TO_WATCH,
-    DELETE_ITEM_WATCHED
+    DELETE_ITEM_WATCHED,
+    ADD_CHECKED
 } from "../actions/actions";
 
 
@@ -14,12 +15,23 @@ const initialState = [];
 const list = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_LIST:
+            const newPayload = action.payload;
+            newPayload.checked = false;
             return [
                 ...state,
-                action.payload
+                newPayload
             ]
         case DELETE_ITEM:
             return state.filter(el => el.imdbID !== action.payload)
+        case ADD_CHECKED:
+            let newPayloadd = action.payload;
+            console.log("tu z dupy dziala")
+            newPayloadd.checked = true;
+            return state.map(el => {
+                if (el.imdbID === action.payload.imdbID) {
+                    return newPayloadd;
+                } else return el;
+            })
         default:
             return state;
     }

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {API_KEY, API_URL} from "../api/constants";
-import {addToList, deleteItem} from "../redux/actions/actions";
+import {addChecked, addToList, deleteItem} from "../redux/actions/actions";
 import Result from "./Result";
 
-const Form = ({add, list, addToToWatch, addWatched, deleteItem}) => {
+const Form = ({add, list, addToToWatch, addWatched, deleteItem, addChecked}) => {
     const [item, setItem] = useState("");
 
     const handleChange = (e) => {
@@ -50,6 +50,7 @@ const Form = ({add, list, addToToWatch, addWatched, deleteItem}) => {
                             addToToWatch={addToToWatch}
                             addWatched={addWatched}
                             deleteItem={deleteItem}
+                            addChecked={addChecked}
                         />
                     ))
                 }

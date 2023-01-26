@@ -1,15 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import RateWidget from "./RateWidget";
 
-const Result = ({data, addToToWatch, addWatched, deleteItem}) => {
-    // const [data, setData] = useState({
-    //     id: data.imdbID,
-    //     ratings: ""
-    // })
+const Result = ({data, addToToWatch, addWatched, deleteItem, addChecked}) => {
+    const [isChecked, setIsChecked] = useState(data.checked);
 
     const handleChange = (e) => {
+        if (!isChecked) {
+            setIsChecked(true);
+        } else {
+            setIsChecked(false)
+        }
+
         if (typeof addToToWatch === "function") {
-            addToToWatch(data)
+            addChecked(data)
         } else console.log("Not a function")
     }
 
@@ -31,11 +34,12 @@ const Result = ({data, addToToWatch, addWatched, deleteItem}) => {
 
     return (
         <div className="single-item">
+            {isChecked} jest tu?
             <img src={data.Poster} alt="Nie działa"/>
             {/*<p>Title: {data.Title}</p>*/}
             <RateWidget data={data} addWatched={addWatched}/>
             <p><button onClick={handleDelete}>Close</button></p>
-            <p>Wanna watch?<input className="checkbox" type="checkbox" onChange={handleChange}/></p>
+            <p>Wanna watch?<input className="checkbox" type="checkbox" checked={isChecked} onChange={handleChange}/></p>
         </div>
 
     );

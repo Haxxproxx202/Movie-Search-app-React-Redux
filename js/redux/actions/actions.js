@@ -4,6 +4,7 @@ const ADD_WATCHED = "ADD_WATCHED";
 const DELETE_ITEM = "DELETE_ITEM";
 const DELETE_ITEM_WATCHED = "DELETE_ITEM_WATCHED";
 const DELETE_ITEM_TO_WATCH = "DELETE_ITEM_TO_WATCH";
+const ADD_CHECKED = "ADD_CHECKED";
 
 const addToList = (item) => {
     return {
@@ -47,7 +48,13 @@ const deleteItem = (id, url) => {
             payload: id
         }
     }
+}
 
+const addChecked = (item) => {
+    return {
+        type: ADD_CHECKED,
+        payload: item
+    }
 }
 
 // const deleteItemMainList = (id) => {
@@ -71,8 +78,10 @@ export {
     DELETE_ITEM,
     DELETE_ITEM_WATCHED,
     DELETE_ITEM_TO_WATCH,
+    ADD_CHECKED,
     addToList,
     addToToWatch,
     addWatched,
-    deleteItem
+    deleteItem,
+    addChecked
 }
