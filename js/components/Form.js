@@ -42,7 +42,7 @@ const Form = ({add, list, addToToWatch, addWatched, deleteItem}) => {
         <>
             <form className="form" onSubmit={handleSubmit}>
                 <input type="text" value={item} placeholder="Enter movie name" onChange={handleChange}/>
-                <button>Search</button>
+                <input id="kk" type="image" src="../../src/images/searchicon.png" alt="Search icon"></input>
             </form>
             {list.length === 0 && <div className="first-view">Hey! Start searching for movies :)</div>}
             <div className="grid-list">
