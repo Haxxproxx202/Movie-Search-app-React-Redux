@@ -10,15 +10,11 @@ const Form = ({add, list, addToToWatch, addWatched, deleteItem}) => {
         setItem(e.target.value);
     }
     const checkSubmit = (item) => {
-        if (list.length >= 1) {
-            list.forEach(el => {
-                if (el.imdbID !== item.imdbID) {
-                    add(item);
-                    return console.log("Nie ma");
-
-                } else console.log("Jest już w bazie")
-            })
-        } else add(item)
+        if (list.some(el => el.imdbID === item.imdbID)) {
+            console.log("Object already added!")
+        } else {
+            add(item);
+        }
     }
 
     const handleSubmit = (e) => {
