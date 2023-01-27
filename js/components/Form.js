@@ -3,7 +3,7 @@ import {API_KEY, API_URL} from "../api/constants";
 import {addChecked, addToList, deleteItem} from "../redux/actions/actions";
 import Result from "./Result";
 
-const Form = ({add, list, addToToWatch, addWatched, deleteItem, addChecked}) => {
+const Form = ({add, list, addToToWatch, addWatched, deleteItem, addToWatch}) => {
     const [item, setItem] = useState("");
 
     const handleChange = (e) => {
@@ -30,10 +30,6 @@ const Form = ({add, list, addToToWatch, addWatched, deleteItem, addChecked}) => 
     }
 
 
-
-
-
-
     return (
         <>
             <form className="form" onSubmit={handleSubmit}>
@@ -50,7 +46,7 @@ const Form = ({add, list, addToToWatch, addWatched, deleteItem, addChecked}) => 
                             addToToWatch={addToToWatch}
                             addWatched={addWatched}
                             deleteItem={deleteItem}
-                            addChecked={addChecked}
+                            addToWatch={addToWatch}
                         />
                     ))
                 }

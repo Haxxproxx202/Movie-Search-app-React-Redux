@@ -2,8 +2,9 @@ import {connect} from "react-redux";
 import ToWatch from "../components/ToWatch";
 import {deleteItem} from "../redux/actions/actions";
 const mapStateToProps = (state) => {
+    const toWatchList = state.list.filter(el => el.towatch === true);
     return {
-        toWatchList: state.toWatchList
+        toWatchList: toWatchList
     }
 }
 

@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import Form from "../components/Form";
-import {addChecked, addToList, addToToWatch, addWatched, deleteItem} from "../redux/actions/actions";
+import {addChecked, addToList, addToToWatch, addToWatch, addWatched, deleteItem} from "../redux/actions/actions";
 
 const mapStateToProps = (state) => {
     return {
@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
         addToToWatch: (item) => dispatch(addToToWatch(item)),
         addWatched: (item, rate) => dispatch(addWatched(item, rate)),
         deleteItem: (id, url) => dispatch(deleteItem(id, url)),
-        addChecked: (item) => dispatch(addChecked(item))
+        addToWatch: (item) => dispatch(addToWatch(item))
     }
 }
 

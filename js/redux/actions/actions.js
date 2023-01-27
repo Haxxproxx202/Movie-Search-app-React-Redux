@@ -4,7 +4,7 @@ const ADD_WATCHED = "ADD_WATCHED";
 const DELETE_ITEM = "DELETE_ITEM";
 const DELETE_ITEM_WATCHED = "DELETE_ITEM_WATCHED";
 const DELETE_ITEM_TO_WATCH = "DELETE_ITEM_TO_WATCH";
-const ADD_CHECKED = "ADD_CHECKED";
+const ADD_TO_WATCH = "ADD_TO_WATCH";
 
 const addToList = (item) => {
     return {
@@ -20,11 +20,7 @@ const addToToWatch = (item) => {
     }
 }
 
-const addWatched = (item, rate) => {
-    const itemm = {
-        id: item,
-        ratings: rate
-    }
+const addWatched = (item) => {
     return {
         type: ADD_WATCHED,
         payload: item
@@ -50,26 +46,13 @@ const deleteItem = (id, url) => {
     }
 }
 
-const addChecked = (item) => {
+const addToWatch = (item) => {
     return {
-        type: ADD_CHECKED,
+        type: ADD_TO_WATCH,
         payload: item
     }
 }
 
-// const deleteItemMainList = (id) => {
-//     return {
-//         type: DELETE_ITEM,
-//         payload: id
-//     }
-// }
-//
-// const deleteItemMainList = (id) => {
-//     return {
-//         type: DELETE_ITEM,
-//         payload: id
-//     }
-// }
 
 export {
     ADD_TO_LIST,
@@ -78,10 +61,10 @@ export {
     DELETE_ITEM,
     DELETE_ITEM_WATCHED,
     DELETE_ITEM_TO_WATCH,
-    ADD_CHECKED,
+    ADD_TO_WATCH,
     addToList,
     addToToWatch,
     addWatched,
     deleteItem,
-    addChecked
+    addToWatch
 }

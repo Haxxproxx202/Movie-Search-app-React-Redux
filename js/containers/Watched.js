@@ -4,8 +4,9 @@ import {deleteItem} from "../redux/actions/actions";
 
 
 const mapStateToProps = (state) => {
+    const watchedList = state.list.filter(el => el.watched === true);
     return {
-        list: state.watchedList
+        list: watchedList
     }
 }
 

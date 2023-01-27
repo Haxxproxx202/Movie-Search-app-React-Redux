@@ -1,17 +1,31 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
-const RateWidget = ({addWatched, data}) => {
-    // const [id, setID] = useState(data);
+const RateWidget = ({dataForWidget, addWatched}) => {
+    const [dataStatee, setDataStatee] = useState(dataForWidget);
+
+    const xxx = {...dataStatee};
 
     const handleChange = (e) => {
         if (typeof addWatched === "function") {
-            addWatched(data, e.target.value);
+            console.log("Tytuł z widgetu: ", xxx.Title)
+            console.log("Tytuł z widgetu2: ", dataStatee.Title)
+            const newState = dataForWidget;
+            newState.watched = !newState.watched;
+            addWatched(newState);
         } else console.log("This is not a function")
     }
 
+    useEffect(() => {
+        console.log("first", dataStatee);
+        const timer = setTimeout(() => {
+            console.log("second", dataStatee);
+        }, 1000)
+    })
+
 
     return (
-        <fieldset className="rating" onChange={handleChange}>
+        <fieldset className="rating" onClick={handleChange}>
+            <div style={{color: "red"}}>{dataStatee.Title}</div>
             <input type="radio" id="star5" name="rating" value="5"/>
                 <label className="full" htmlFor="star5" title="Awesome - 5 stars"></label>
             <input type="radio" id="star4half" name="rating" value="4 and a half"/>
