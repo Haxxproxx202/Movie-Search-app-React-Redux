@@ -7,6 +7,7 @@ import store from "./redux/store";
 import Navigator from "./components/Navigator";
 import ToWatch from "./containers/ToWatch";
 import Watched from "./containers/Watched";
+import MovieDetails from "./components/MovieDetails";
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
                     <Route exact path="/" element={<Main />} />
                     <Route path="/towatch" element={<ToWatch />} />
                     <Route path="/watched" element={<Watched />} />
+                    <Route path="/details/:id?" element={<MovieDetails />} />
                 </Routes>
             </BrowserRouter>
         </Provider>
