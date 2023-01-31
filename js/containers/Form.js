@@ -1,10 +1,11 @@
 import {connect} from "react-redux";
 import Form from "../components/Form";
-import {addChecked, addToList, addToToWatch, addToWatch, addWatched, deleteItem} from "../redux/actions/actions";
+import { addToList, addToToWatch, addToWatch, addWatched, deleteItem } from "../redux/actions/actions";
 
 const mapStateToProps = (state) => {
+    const searchedList = state.list.filter(el => el.searched === true);
     return {
-        list: state.list
+        list: searchedList
     }
 }
 

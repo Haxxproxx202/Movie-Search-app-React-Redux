@@ -15,7 +15,6 @@ const Result = ({data, addToToWatch, addWatched, deleteItem, addToWatch}) => {
     }
 
     const handleAddWatched = (obiekt) => {
-        console.log("TUUUU", obiekt.Title)
         const newData = dataState;
         newData.watched = !newData.towatch;
         if (typeof addWatched === "function") {
@@ -44,9 +43,12 @@ const Result = ({data, addToToWatch, addWatched, deleteItem, addToWatch}) => {
             <img src={data.Poster} alt="Nie działa"/>
             <div style={{color: "white"}}>{dataState.Title}</div>
             {/*<p>Title: {data.Title}</p>*/}
-            <RateWidget dataForWidget={dataState} addWatched={handleAddWatched}/>
+            <RateWidget
+                dataForWidget={dataState}
+                addWatched={handleAddWatched}
+            />
             <p><button onClick={handleDelete}>Close</button></p>
-            <p>Wanna watch?<input className="checkbox" type="checkbox" checked={data.towatch} onChange={handleChange}/></p>
+            <p style={{color: "whitesmoke"}}>Wanna watch?<input className="checkbox" type="checkbox" checked={data.towatch} onChange={handleChange}/></p>
         </div>
 
     );
