@@ -107,16 +107,25 @@ h1 { font-size: 1.5em; margin: 10px; }
     cursor: pointer;
 }
 .single-item {
+    position: relative;
     margin: 20px;
     width: 300px;
     border-radius: 10px;
     border: 1px solid white;
 }
 
-.single-item img {
+.single-item img:first-child {
+    position: relative;
     width: 300px;
     height: 430px;
     border-radius: 10px;
+}
+.xicon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
 }
 
 .single-item button {

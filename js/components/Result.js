@@ -41,13 +41,13 @@ const Result = ({data, addToToWatch, addWatched, deleteItem, addToWatch}) => {
     return (
         <div className="single-item">
             <img src={data.Poster} alt="Nie działa"/>
+            <img className="xicon" src="../../src/images/xicon2.png" onClick={handleDelete}/>
             <div style={{color: "white"}}>{dataState.Title}</div>
-            {/*<p>Title: {data.Title}</p>*/}
             <RateWidget
                 dataForWidget={dataState}
                 addWatched={handleAddWatched}
             />
-            <p><button onClick={handleDelete}>Close</button></p>
+            {/*<p><button onClick={handleDelete}>Close</button></p>*/}
             <p style={{color: "whitesmoke"}}>Wanna watch?<input className="checkbox" type="checkbox" checked={data.towatch} onChange={handleChange}/></p>
         </div>
 

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import {API_KEY, API_URL} from "../api/constants";
 import {addChecked, addToList, deleteItem} from "../redux/actions/actions";
 import Result from "./Result";
