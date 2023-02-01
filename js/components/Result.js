@@ -22,15 +22,7 @@ const Result = ({data, addToToWatch, addWatched, deleteItem, addToWatch}) => {
             addWatched(newData);
         } else console.log("Not a function 2")
     }
-
-    // const handleState = (ratings) => {
-    //     setData(prevState => {
-    //         return {
-    //             ...prevState,
-    //             ratings: ratings
-    //         }
-    //     })
-    // }
+    
 
     const handleDelete = (e) => {
         if (typeof deleteItem === "function") {
