@@ -9,11 +9,12 @@ const MovieDetails = () => {
             <img src={state.Poster} />
             <div className="details">
                 <p>Year: {state.Year}</p>
+                <p>Genre: {state.Genre}</p>
                 <p>Director: {state.Director}</p>
                 <p>Actors: {state.Actors}</p>
                 <p>Description: {state.Plot}</p>
                 <p>Runtime: {state.Runtime}</p>
-                <p>Rating: </p>
+                <p>Rating: {state.imdbRating}</p>
             </div>
         </div>
     );
