@@ -66,22 +66,26 @@ h1 { font-size: 1.5em; margin: 10px; }
     padding: 3px 10px;
     align-self: center;
 }
+.loader {
+    position: relative;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+}
 
 .form input:first-child {
     width: 200px;
-    transition: width 2s;
+    transition: width 2s ease;
 }
 .form input:first-child:hover {
     width: 400px;
 }
 
-.form input:last-child {
+.form input:nth-child(2) {
     all: unset;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
-
-
 
 .first-view {
     font-size: 40px;
@@ -140,10 +144,39 @@ h1 { font-size: 1.5em; margin: 10px; }
 }
 
 .movie-details {
+    overflow: hidden;
     color: whitesmoke;
     margin: 20px;
     border-radius: 10px;
     border: 1px solid whitesmoke;
+}
+.movie-details img {
+    float: left;
+    border-radius: 10px;
+    margin: 30px 20px;
+    width: 400px;
+    height: 570px;
+    overflow-wrap: break-word;
+}
+.details {
+    inline-size: 900px;
+    float: left;
+    margin: 30px;
+    border: 1px solid red;
+    border-radius: 10px;
+    font-size: 30px;
+}
+.details p:first-
+
+/*.details p {*/
+/*    font-size: 30px;*/
+/*    margin: 10px;*/
+/*}*/
+
+.movie-details div:first-child {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
 }
 
 /****** Style Star Rating Widget *****/
