@@ -47,11 +47,12 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 .form {
     display: flex;
+    flex-direction: column;
     margin-left: 10px;
     margin-top: 20px;
     font-size: 20px;
     border-radius: 10%;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 .form input {
@@ -60,14 +61,18 @@ h1 { font-size: 1.5em; margin: 10px; }
     margin: 10px 5px 10px 10px;
     font-size: 15px;
     padding: 3px 10px;
-    align-self: center;
+    /*align-self: center;*/
+}
+.loader {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
-.loader {
-    position: relative;
-    left: 10px;
-    width: 20px;
-    height: 20px;
+.loader img {
+    text-align: center;
+    width: 30px;
+    height: 30px;
 }
 
 .form input:first-child {
@@ -80,6 +85,15 @@ h1 { font-size: 1.5em; margin: 10px; }
 }
 
 .form input:nth-child(2) {
+    width: 200px;
+    transition: width 2s ease;
+}
+
+.form input:nth-child(2):hover {
+    width: 400px;
+}
+
+.form input:last-child {
     all: unset;
     width: 30px;
     height: 30px;

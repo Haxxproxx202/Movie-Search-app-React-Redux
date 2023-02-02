@@ -22,7 +22,7 @@ const Result = ({data, addToToWatch, addWatched, deleteItem, addToWatch}) => {
             addWatched(newData);
         } else console.log("Not a function 2")
     }
-    
+
 
     const handleDelete = (e) => {
         if (typeof deleteItem === "function") {
