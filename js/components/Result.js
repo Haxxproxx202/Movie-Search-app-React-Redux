@@ -46,7 +46,12 @@ const Result = ({data, addToToWatch, addWatched, deleteItem, addToWatch}) => {
                 dataForWidget={dataState}
                 addWatched={handleAddWatched}
             />
-            <p style={{color: "whitesmoke"}}>Wanna watch?<input className="checkbox" type="checkbox" checked={data.towatch} onChange={handleChange}/></p>
+            {/*<p style={{color: "gray", alignContent: "center"}}>Wanna watch?<input className="checkbox" type="checkbox" checked={data.towatch} onChange={handleChange}/></p>*/}
+            <label className="switch">
+                Wanna watch?
+                <input type="checkbox"/>
+                    <span className="slider round"></span>
+            </label>
         </div>
 
     );
