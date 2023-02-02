@@ -6,7 +6,11 @@ const MovieDetails = () => {
     return (
         <div className="movie-details">
             <div className="title">Title: {state.Title}</div>
-            <img src={state.Poster} />
+            {
+                state.Poster === "N/A"?
+                    <img  id="not-found" src="../../src/images/no_image.png" alt="Not Found" />:
+                    <img src={state.Poster} alt="Not Found"/>
+            }
             <div className="details">
                 <p>Year: {state.Year}</p>
                 <p>Genre: {state.Genre}</p>

@@ -51,8 +51,7 @@ h1 { font-size: 1.5em; margin: 10px; }
     margin-left: 10px;
     margin-top: 20px;
     font-size: 20px;
-    border-radius: 10%;
-    /*align-items: center;*/
+    /*border-radius: 10%;*/
 }
 
 .form input {
@@ -61,7 +60,6 @@ h1 { font-size: 1.5em; margin: 10px; }
     margin: 10px 5px 10px 10px;
     font-size: 15px;
     padding: 3px 10px;
-    /*align-self: center;*/
 }
 .loader {
     display: flex;
@@ -97,7 +95,10 @@ h1 { font-size: 1.5em; margin: 10px; }
     all: unset;
     width: 30px;
     height: 30px;
+    margin-left: 5px;
+    margin-top: 5px;
 }
+
 
 .first-view {
     font-size: 40px;
@@ -139,6 +140,10 @@ h1 { font-size: 1.5em; margin: 10px; }
     border-radius: 10px;
 }
 
+.single-item img[id="not-found"] {
+    object-fit: scale-down;
+}
+
 .xicon {
     position: absolute;
     top: 10px;
@@ -176,6 +181,10 @@ h1 { font-size: 1.5em; margin: 10px; }
     overflow-wrap: break-word;
 }
 
+.movie-details img[id="not-found"] {
+    object-fit: scale-down;
+}
+
 .details {
     inline-size: 900px;
     float: left;
@@ -206,37 +215,38 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 /****** Style Star Rating Widget *****/
 
-.rating {
-    border: none;
+.rate {
     float: left;
+    height: 46px;
+    padding: 0 5px;
 }
-
-.rating > input { display: none; }
-.rating > label:before {
-    margin: 5px;
-    font-size: 1.25em;
-    font-family: FontAwesome;
-    display: inline-block;
-    content: "\f005";
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
 }
-
-.rating > .half:before {
-    content: "\f089";
-    position: absolute;
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
 }
-
-.rating > label {
-    color: #ddd;
-    float: right;
+.rate:not(:checked) > label:before {
+    content: '★ ';
 }
-
-/***** CSS Magic to Highlight Stars on Hover *****/
-
-.rating > input:checked ~ label, /* show gold star when clicked */
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
-
-.rating > input:checked + label:hover, /* hover current star when changing rating */
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}

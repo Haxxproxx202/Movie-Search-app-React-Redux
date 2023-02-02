@@ -39,7 +39,9 @@ const Form = ({add, list, addToToWatch, addWatched, deleteItem, addToWatch}) => 
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoader(true);
-        getMovie(item, year, checkSubmit)
+        getMovie(item, year, checkSubmit);
+        setItem("");
+        setYear("");
     }
 
 
@@ -49,8 +51,6 @@ const Form = ({add, list, addToToWatch, addWatched, deleteItem, addToWatch}) => 
                 <input type="text" name="item" value={item} placeholder="Enter movie name" onChange={handleChange}/>
                 <input type="text" name="year" value={year} placeholder="Enter year" onChange={handleChange}/>
                 <input id="kk" type="image" src="../../src/images/searchicon.png" alt="Search icon"></input>
-
-
             </form>
             {loader && <div className="loader"><img src="../../src/images/VAyR.gif" alt="spinner"/></div>}
             {movieNotFound && <div className="movie-not-found">Movie not found</div>}

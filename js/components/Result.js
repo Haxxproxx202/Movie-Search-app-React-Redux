@@ -34,10 +34,14 @@ const Result = ({data, addToToWatch, addWatched, deleteItem, addToWatch}) => {
     return (
         <div className="single-item">
             <Link to={`/details/${data.imdbID}`} state={data}>
-                <img src={data.Poster} alt="Nie działa" />
+                {
+                    data.Poster === "N/A"?
+                    <img id="not-found" src="../../src/images/no_image.png" alt="Not found"/>:
+                    <img src={data.Poster} alt="Not found" />
+                }
             </Link>
             <img className="xicon" src="../../src/images/xicon2.png" onClick={handleDelete}/>
-            <div style={{color: "white"}}>{dataState.Title}</div>
+            <div style={{color: "gray", fontSize: "17px", fontWeight: "bold", textAlign: "center"}}>{dataState.Title}, {dataState.Year}</div>
             <RateWidget
                 dataForWidget={dataState}
                 addWatched={handleAddWatched}
