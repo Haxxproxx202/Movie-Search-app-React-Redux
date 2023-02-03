@@ -15,41 +15,38 @@ const Result = ({data, addToToWatch, addWatched, deleteItem, addToWatch}) => {
         } else console.log("Not a function")
     }
 
-    const handleAddWatched = (obiekt) => {
-        const newData = dataState;
-        newData.watched = !newData.towatch;
+    const handleAddWatched = (object) => {
         if (typeof addWatched === "function") {
-            addWatched(newData);
+            addWatched(object);
         } else console.log("Not a function 2")
     }
 
 
     const handleDelete = (e) => {
         if (typeof deleteItem === "function") {
-            deleteItem(data.imdbID, window.location.href);
+            deleteItem(dataState.imdbID, window.location.href);
         } else console.log(window.location.href)
     }
 
 
     return (
         <div className="single-item">
-            <Link to={`/details/${data.imdbID}`} state={data}>
+            <Link to={`/details/${dataState.imdbID}`} state={dataState}>
                 {
-                    data.Poster === "N/A"?
+                    dataState.Poster === "N/A"?
                     <img id="not-found" src="../../src/images/no_image.png" alt="Not found"/>:
-                    <img src={data.Poster} alt="Not found" />
+                    <img src={dataState.Poster} alt="Not found" />
                 }
             </Link>
             <img className="xicon" src="../../src/images/xicon2.png" onClick={handleDelete}/>
             <div style={{color: "gray", fontSize: "17px", fontWeight: "bold", textAlign: "center"}}>{dataState.Title}, {dataState.Year}</div>
             <RateWidget
+                // dataForWidget={dataState}
                 dataForWidget={dataState}
                 addWatched={handleAddWatched}
             />
-            {/*<p style={{color: "gray", alignContent: "center"}}>Wanna watch?<input className="checkbox" type="checkbox" checked={data.towatch} onChange={handleChange}/></p>*/}
             <label className="switch">
-                Wanna watch?
-                <input type="checkbox"/>
+                <input type="checkbox" checked={dataState.towatch} onChange={handleChange}/>
                     <span className="slider round"></span>
             </label>
         </div>

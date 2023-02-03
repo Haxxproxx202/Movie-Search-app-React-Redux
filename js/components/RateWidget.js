@@ -9,7 +9,7 @@ const RateWidget = ({dataForWidget, addWatched}) => {
         if (typeof addWatched === "function") {
             // console.log("Tytuł z widgetu: ", xxx.Title)
             // console.log("Tytuł z widgetu2: ", dataStatee.Title)
-            const newState = dataForWidget;
+            const newState = dataStatee;
             newState.watched = !newState.watched;
             addWatched(newState);
         } else console.log("This is not a function")
