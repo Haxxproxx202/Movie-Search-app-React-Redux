@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import ToWatch from "../components/ToWatch";
-import {deleteItem} from "../redux/actions/actions";
+import {addToWatch, deleteItem} from "../redux/actions/actions";
 const mapStateToProps = (state) => {
     const toWatchList = state.list.filter(el => el.towatch === true);
     return {
@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        deleteItem: (id, url) => dispatch(deleteItem(id, url))
+        deleteItem: (id, url) => dispatch(deleteItem(id, url)),
+        addToWatch: (item) => dispatch(addToWatch(item))
     }
 }
 

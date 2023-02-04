@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import {addChecked, addToList, deleteItem} from "../redux/actions/actions";
 import Result from "./Result";
 import {getMovie} from "../api/getMovie";
 
-const Form = ({add, list, addToToWatch, addWatched, deleteItem, addToWatch}) => {
+const Form = ({add, list, addWatched, deleteItem, addToWatch}) => {
     const [item, setItem] = useState("");
     const [year, setYear] = useState("");
     const [loader, setLoader] = useState(false);
@@ -16,8 +15,6 @@ const Form = ({add, list, addToToWatch, addWatched, deleteItem, addToWatch}) => 
         } else {
             setYear(value);
         }
-
-        // setItem(e.target.value);
     }
     const checkSubmit = (item) => {
         if (item.Response === "True") {
@@ -61,7 +58,6 @@ const Form = ({add, list, addToToWatch, addWatched, deleteItem, addToWatch}) => 
                         <Result
                             key={id}
                             data={el}
-                            addToToWatch={addToToWatch}
                             addWatched={addWatched}
                             deleteItem={deleteItem}
                             addToWatch={addToWatch}

@@ -1,7 +1,14 @@
 import React from 'react';
 import Result from "./Result";
 
-const ToWatch = ({toWatchList, deleteItem}) => {
+const ToWatch = ({toWatchList, deleteItem, addToWatch}) => {
+
+    const timer = (item) => {
+        setTimeout(() => {
+            addToWatch(item);
+        }, 400)
+
+    }
     return (
         <div className="grid-list">
             {
@@ -9,10 +16,10 @@ const ToWatch = ({toWatchList, deleteItem}) => {
                     <Result key={i}
                             data={el}
                             deleteItem={deleteItem}
+                            addToWatch={timer}
                     />
                 ))
             }
-
         </div>
     );
 };

@@ -1,9 +1,10 @@
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 import {
     ADD_TO_LIST,
     ADD_WATCHED,
     DELETE_ITEM,
-    ADD_TO_WATCH, DELETE_ITEM_WATCHED
+    ADD_TO_WATCH,
+    DELETE_ITEM_WATCHED
 } from "../actions/actions";
 
 

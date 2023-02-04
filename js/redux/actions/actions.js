@@ -1,5 +1,4 @@
 const ADD_TO_LIST = "ADD_TO_LIST";
-const ADD_TO_TO_WATCH_LIST = "ADD_TO_TO_WATCH_LIST";
 const ADD_WATCHED = "ADD_WATCHED";
 const DELETE_ITEM = "DELETE_ITEM";
 const DELETE_ITEM_WATCHED = "DELETE_ITEM_WATCHED";
@@ -9,13 +8,6 @@ const ADD_TO_WATCH = "ADD_TO_WATCH";
 const addToList = (item) => {
     return {
         type: ADD_TO_LIST,
-        payload: item
-    }
-}
-
-const addToToWatch = (item) => {
-    return {
-        type: ADD_TO_TO_WATCH_LIST,
         payload: item
     }
 }
@@ -56,14 +48,12 @@ const addToWatch = (item) => {
 
 export {
     ADD_TO_LIST,
-    ADD_TO_TO_WATCH_LIST,
     ADD_WATCHED,
     DELETE_ITEM,
     DELETE_ITEM_WATCHED,
     DELETE_ITEM_TO_WATCH,
     ADD_TO_WATCH,
     addToList,
-    addToToWatch,
     addWatched,
     deleteItem,
     addToWatch
