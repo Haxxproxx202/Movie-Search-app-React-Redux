@@ -1,15 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 
 const RateWidget = ({dataForWidget, addWatched}) => {
-    const [dataStatee, setDataStatee] = useState(dataForWidget);
+    const [dataState, setDataState] = useState(dataForWidget);
 
     const handleChange = (e) => {
         e.preventDefault();
-        // console.log(e.target.value)
         if (typeof addWatched === "function") {
-            // console.log("Tytuł z widgetu: ", xxx.Title)
-            // console.log("Tytuł z widgetu2: ", dataStatee.Title)
-            const newState = dataStatee;
+            const newState = dataState;
             newState.watched = !newState.watched;
             addWatched(newState);
         } else console.log("This is not a function")
@@ -18,17 +15,16 @@ const RateWidget = ({dataForWidget, addWatched}) => {
     return (
         <div className="rate" onClick={handleChange}>
             <input type="radio" id="star5" name="rate" value="5"/>
-            <label htmlFor="star5" title="text">5 stars</label>
+            <label htmlFor="star5" title="5">5 stars</label>
             <input type="radio" id="star4" name="rate" value="4"/>
-            <label htmlFor="star4" title="text">4 stars</label>
+            <label htmlFor="star4" title="4">4 stars</label>
             <input type="radio" id="star3" name="rate" value="3"/>
-            <label htmlFor="star3" title="text">3 stars</label>
+            <label htmlFor="star3" title="3">3 stars</label>
             <input type="radio" id="star2" name="rate" value="2"/>
-            <label htmlFor="star2" title="text">2 stars</label>
+            <label htmlFor="star2" title="2">2 stars</label>
             <input type="radio" id="star1" name="rate" value="1"/>
-            <label htmlFor="star1" title="text">1 star</label>
+            <label htmlFor="star1" title="1">1 star</label>
         </div>
-        // <button onClick={handleChange}>Oglądałeś?</button>
     );
 };
 

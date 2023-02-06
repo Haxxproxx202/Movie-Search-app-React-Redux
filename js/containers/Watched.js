@@ -1,12 +1,12 @@
 import {connect} from "react-redux";
 import Watched from "../components/Watched";
 import {deleteItem} from "../redux/actions/actions";
+import {watchedList} from "../redux/selectors";
 
 
 const mapStateToProps = (state) => {
-    const watchedList = state.list.filter(el => el.watched === true);
     return {
-        list: watchedList
+        list: watchedList(state)
     }
 }
 

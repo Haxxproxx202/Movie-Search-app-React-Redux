@@ -1,4 +1,4 @@
-import {API_KEY} from "./constants";
+import {API_KEY, API_URL} from "./constants";
 
 const handleErrors = response => {
     if (!response.ok) {
@@ -10,7 +10,7 @@ const handleErrors = response => {
 export const getMovie = (item, year, checkSubmit) => {
     if (year === "") {
         setTimeout(() => {
-            fetch('https://www.omdbapi.com/?t=' + item + '&apikey=' +API_KEY, {
+            fetch(API_URL + item + API_KEY, {
                 method: "GET"
             })
                 .then(handleErrors)
@@ -20,7 +20,7 @@ export const getMovie = (item, year, checkSubmit) => {
         }, 500)
     } else {
         setTimeout(() => {
-            fetch('https://www.omdbapi.com/?t=' + item + '&y=' + year + '&apikey=' +API_KEY, {
+            fetch(API_URL + item + '&y=' + year + API_KEY, {
                 method: "GET"
             })
                 .then(handleErrors)

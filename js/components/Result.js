@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import RateWidget from "./RateWidget";
-import {Link, NavLink} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Result = ({data, addWatched, deleteItem, addToWatch}) => {
     const [dataState, setDataState] = useState(data);
-    const [checkChecked, setCheckChecked] = useState(true);
+    const [checked, setChecked] = useState(true);
 
 
-    const handleChange = (e) => {
-        setCheckChecked(!checkChecked);
+    const handleChange = () => {
+        setChecked(!checked);
         const newData = dataState;
         newData.towatch = !newData.towatch;
         setDataState(newData);
@@ -21,14 +21,14 @@ const Result = ({data, addWatched, deleteItem, addToWatch}) => {
     const handleAddWatched = (object) => {
         if (typeof addWatched === "function") {
             addWatched(object);
-        } else console.log("Not a function 2")
+        } else console.log("Not a function")
     }
 
 
-    const handleDelete = (e) => {
+    const handleDelete = () => {
         if (typeof deleteItem === "function") {
             deleteItem(dataState.imdbID, window.location.href);
-        } else console.log(window.location.href)
+        } else console.log("Not a function")
     }
 
 
@@ -41,24 +41,22 @@ const Result = ({data, addWatched, deleteItem, addToWatch}) => {
                     <img src={dataState.Poster} alt="Not found" />
                 }
             </Link>
-            <img className="xicon" src="../../src/images/xicon2.png" onClick={handleDelete}/>
+            {!window.location.href.includes('towatch') &&
+                <img className="x-icon" src="../../src/images/xicon2.png" alt="X" onClick={handleDelete}/>}
+
             <div style={{color: "gray", fontSize: "17px", fontWeight: "bold", textAlign: "center"}}>{dataState.Title}, {dataState.Year}</div>
 
             <RateWidget
                 dataForWidget={dataState}
                 addWatched={handleAddWatched}
             />
-            <label className="switch">
+            <label className="switch" title="Add to watched list">
                 {window.location.href.includes('towatch')?
-                    <input type="checkbox" checked={checkChecked} onChange={handleChange}/>:
+                    <input type="checkbox" checked={checked} onChange={handleChange}/>:
                     <input type="checkbox" checked={dataState.towatch} onChange={handleChange}/>
                 }
                 <span className="slider round"></span>
             </label>
-            {/*<label className="switch">*/}
-            {/*    <input type="checkbox" checked={dataState.towatch} onChange={handleChange}/>*/}
-            {/*        <span className="slider round"></span>*/}
-            {/*</label>*/}
         </div>
 
     );

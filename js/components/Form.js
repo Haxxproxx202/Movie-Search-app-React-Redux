@@ -8,6 +8,7 @@ const Form = ({add, list, addWatched, deleteItem, addToWatch}) => {
     const [loader, setLoader] = useState(false);
     const [movieNotFound, setMovieNotFound] = useState(false);
 
+
     const handleChange = (e) => {
         const {name, value} = e.target;
         if (name === "item") {
@@ -16,11 +17,11 @@ const Form = ({add, list, addWatched, deleteItem, addToWatch}) => {
             setYear(value);
         }
     }
+
     const checkSubmit = (item) => {
         if (item.Response === "True") {
             setLoader(false);
             if (list.some(el => el.imdbID === item.imdbID)) {
-                console.log("Object already added!")
             } else {
                 add(item);
             }
@@ -45,7 +46,7 @@ const Form = ({add, list, addWatched, deleteItem, addToWatch}) => {
     return (
         <>
             <form className="form" onSubmit={handleSubmit}>
-                <input type="text" name="item" value={item} placeholder="Enter movie name" onChange={handleChange}/>
+                <input type="text" name="item" value={item} placeholder="Enter movie title" onChange={handleChange}/>
                 <input type="text" name="year" value={year} placeholder="Enter year" onChange={handleChange}/>
                 <input id="kk" type="image" src="../../src/images/searchicon.png" alt="Search icon"></input>
             </form>
@@ -66,7 +67,6 @@ const Form = ({add, list, addWatched, deleteItem, addToWatch}) => {
                 }
             </div>
         </>
-
     );
 };
 

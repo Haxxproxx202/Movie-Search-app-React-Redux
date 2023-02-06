@@ -8,7 +8,6 @@ import {
 } from "../actions/actions";
 
 
-
 const initialState = [];
 const list = (state = initialState, action) => {
     switch (action.type) {
@@ -57,12 +56,8 @@ const list = (state = initialState, action) => {
         case ADD_WATCHED:
             return state.map(el => {
                 if (el.imdbID === action.payload.imdbID) {
-                    console.log("Rowna się")
                     return action.payload;
-                } else {
-                    console.log("Nie równa się");
-                    return el;
-                }
+                } else return el;
             })
         default:
             return state;

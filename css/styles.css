@@ -22,21 +22,17 @@ h1 { font-size: 1.5em; margin: 10px; }
 }
 
 .active {
-    color: whitesmoke;
-}
-
-.navvv {
-    color: whitesmoke;
+    color: green;
     text-decoration: none;
-    font-weight: bold;
 }
 
-.navvv:hover {
-    color: red;
+.inactive {
+    text-decoration: none;
+    color: whitesmoke;
 }
 
-.navigator span {
-    color: white;
+.inactive:hover {
+    color: green;
 }
 
 .navigator span {
@@ -51,7 +47,6 @@ h1 { font-size: 1.5em; margin: 10px; }
     margin-left: 10px;
     margin-top: 20px;
     font-size: 20px;
-    /*border-radius: 10%;*/
 }
 
 .form input {
@@ -101,7 +96,7 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 
 .first-view {
-    font-size: 40px;
+    font-size: 25px;
     text-align: center;
     font-weight: bold;
     margin-top: 200px;
@@ -145,7 +140,7 @@ h1 { font-size: 1.5em; margin: 10px; }
     object-fit: scale-down;
 }
 
-.xicon {
+.x-icon {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -171,7 +166,6 @@ h1 { font-size: 1.5em; margin: 10px; }
     margin: 20px;
     border-radius: 10px;
     border: 1px solid whitesmoke;
-
 }
 
 .movie-details img {
@@ -203,11 +197,6 @@ h1 { font-size: 1.5em; margin: 10px; }
     font-weight: bold;
     font-size: 20px;
 }
-
-/*.details p {*/
-/*    font-size: 30px;*/
-/*    margin: 10px;*/
-/*}*/
 
 .movie-details div:first-child {
     font-size: 40px;
