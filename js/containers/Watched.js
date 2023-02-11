@@ -1,7 +1,7 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import Watched from "../components/Watched";
-import {deleteItem} from "../redux/actions/actions";
-import {watchedList} from "../redux/selectors";
+import { deleteItem } from "../redux/actions/actions";
+import { watchedList } from "../redux/selectors";
 
 
 const mapStateToProps = (state) => {
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Watched)
+export default connect(mapStateToProps, mapDispatchToProps)(Watched);

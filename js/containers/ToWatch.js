@@ -1,7 +1,7 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import ToWatch from "../components/ToWatch";
 import { addToWatch, deleteItem } from "../redux/actions/actions";
-import {toWatchList} from "../redux/selectors";
+import { toWatchList } from "../redux/selectors";
 const mapStateToProps = (state) => {
     return {
         toWatchList: toWatchList(state)

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Result from "./Result";
-import {getMovie} from "../api/getMovie";
+import { getMovie } from "../api/getMovie";
 
 const Form = ({add, list, addWatched, deleteItem, addToWatch}) => {
     const [item, setItem] = useState("");

@@ -29,5 +29,4 @@ export const getMovie = (item, year, checkSubmit) => {
                 .catch(error => console.log(error))
         }, 500)
     }
-
 }

@@ -1,7 +1,7 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import Form from "../components/Form";
 import { addToList, addToWatch, addWatched, deleteItem } from "../redux/actions/actions";
-import {allList} from "../redux/selectors";
+import { allList } from "../redux/selectors";
 
 const mapStateToProps = (state) => {
     return {

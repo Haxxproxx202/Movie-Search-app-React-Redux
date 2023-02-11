@@ -17,20 +17,17 @@ const Result = ({data, addWatched, deleteItem, addToWatch}) => {
         } else console.log("Not a function")
     }
 
-
     const handleAddWatched = (object) => {
         if (typeof addWatched === "function") {
             addWatched(object);
         } else console.log("Not a function")
     }
 
-
     const handleDelete = () => {
         if (typeof deleteItem === "function") {
             deleteItem(dataState.imdbID, window.location.href);
         } else console.log("Not a function")
     }
-
 
     return (
         <div className="single-item">
@@ -44,13 +41,15 @@ const Result = ({data, addWatched, deleteItem, addToWatch}) => {
             {!window.location.href.includes('towatch') &&
                 <img className="x-icon" src="../../src/images/xicon2.png" alt="X" onClick={handleDelete}/>}
 
-            <div style={{color: "gray", fontSize: "17px", fontWeight: "bold", textAlign: "center"}}>{dataState.Title}, {dataState.Year}</div>
+            <div style={{color: "gray", fontSize: "17px", fontWeight: "bold", textAlign: "center"}}>
+                {dataState.Title}, {dataState.Year}
+            </div>
 
             <RateWidget
                 dataForWidget={dataState}
                 addWatched={handleAddWatched}
             />
-            <label className="switch" title="Add to watched list">
+            <label className="switch" title='Add to "To watch" list'>
                 {window.location.href.includes('towatch')?
                     <input type="checkbox" checked={checked} onChange={handleChange}/>:
                     <input type="checkbox" checked={dataState.towatch} onChange={handleChange}/>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const RateWidget = ({dataForWidget, addWatched}) => {
-    const [dataState, setDataState] = useState(dataForWidget);
+    const [dataState] = useState(dataForWidget);
 
     const handleChange = (e) => {
         e.preventDefault();
